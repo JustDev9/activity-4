@@ -15,7 +15,6 @@ export default function Contact() {
   };
 
   return (
-      return (
     <main className="min-h-screen bg-gradient-to-b from-purple-600 via-purple-300 to-white p-8">
       <nav className="fixed top-0 left-0 right-0 p-4 flex justify-center items-center gap-6 bg-white/10 backdrop-blur-md z-50">
         <Link 
