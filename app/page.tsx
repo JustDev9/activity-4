@@ -64,7 +64,13 @@ export default function Home() {
           </button>
         </div>
 
-        <nav className="mt-12 flex justify-center gap-6">
+        <nav className="fixed top-0 left-0 right-0 p-4 flex justify-center items-center gap-6 bg-white/10 backdrop-blur-md z-50">
+          <Link 
+            href="/"
+            className="px-6 py-3 bg-white/50 backdrop-blur-sm rounded-lg hover:bg-white/80 transition-all duration-300 text-purple-700 font-medium shadow-lg hover:shadow-purple-200/50 transform hover:scale-105"
+          >
+            Home
+          </Link>
           <Link 
             href="/about"
             className="px-6 py-3 bg-white/50 backdrop-blur-sm rounded-lg hover:bg-white/80 transition-all duration-300 text-purple-700 font-medium shadow-lg hover:shadow-purple-200/50 transform hover:scale-105"
