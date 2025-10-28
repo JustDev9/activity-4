@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Home() {
@@ -13,17 +13,20 @@ export default function Home() {
       <div className="max-w-2xl w-full bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 hover:shadow-purple-200/50 transition-all duration-300">
         <div className="relative">
           <Image 
-            src="/profile-placeholder.svg" 
-            alt="Profile" 
+            src="/profile.jpeg" 
+            alt="Justin O. Del Rosario" 
             width={200} 
             height={200} 
-            className="rounded-full mx-auto bg-gradient-to-r from-purple-400 to-pink-300 p-1"
+            className="rounded-full mx-auto bg-gradient-to-r from-purple-400 to-pink-300 p-1 object-cover"
+            priority
           />
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
         </div>
+
         <h1 className={`mt-6 text-4xl font-bold text-center ${isGradient ? 'bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600' : color}`}>
           Justin O. Del Rosario
         </h1>
+
         <p className="mt-4 text-lg text-gray-600 text-center leading-relaxed">
           An aspiring web developer with a passion for designing beautiful and functional user experiences. 
           I love turning creative ideas into reality through code.
@@ -52,38 +55,17 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <button
             className="px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-lg hover:shadow-lg hover:shadow-purple-300/50 transform hover:scale-105 transition-all duration-300"
             onClick={() => {
               setIsGradient(!isGradient);
-              setColor(isGradient ? 'text-purple-700' : 'from-purple-600 to-pink-600');
+              setColor(isGradient ? 'text-purple-700' : 'text-black');
             }}
           >
             Change Name Color
           </button>
         </div>
-
-        <nav className="fixed top-0 left-0 right-0 p-4 flex justify-center items-center gap-6 bg-white/10 backdrop-blur-md z-50">
-          <Link 
-            href="/"
-            className="px-6 py-3 bg-white/50 backdrop-blur-sm rounded-lg hover:bg-white/80 transition-all duration-300 text-purple-700 font-medium shadow-lg hover:shadow-purple-200/50 transform hover:scale-105"
-          >
-            Home
-          </Link>
-          <Link 
-            href="/about"
-            className="px-6 py-3 bg-white/50 backdrop-blur-sm rounded-lg hover:bg-white/80 transition-all duration-300 text-purple-700 font-medium shadow-lg hover:shadow-purple-200/50 transform hover:scale-105"
-          >
-            About Me
-          </Link>
-          <Link 
-            href="/contact"
-            className="px-6 py-3 bg-white/50 backdrop-blur-sm rounded-lg hover:bg-white/80 transition-all duration-300 text-purple-700 font-medium shadow-lg hover:shadow-purple-200/50 transform hover:scale-105"
-          >
-            Contact
-          </Link>
-        </nav>
       </div>
     </main>
   );
